@@ -1,0 +1,10 @@
+{
+	"name": "infrajs/crumb",
+	"license": "GPL3",
+	"autoload": {
+		"psr-4": { "infrajs\\crumb\\": "/" }
+	},
+	"require":{
+		"infrajs/sequence":"~1"
+	}
+}
