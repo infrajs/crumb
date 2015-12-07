@@ -136,4 +136,21 @@ class Crumb
 	{
 		return $this->short($this->path);
 	}
+	public static function set(&$layer, $name, &$value)
+	{
+		if (!isset($layer['dyn'])) {
+			$layer['dyn'] = array();
+		}
+		$layer['dyn'][$name] = $value;
+		if (isset($layer['parent'])) {
+			$root = &$layer['parent'][$name];
+		} else {
+			$root = &ext\Crumb::getInstance();
+		}
+		if ($layer['dyn'][$name]) {
+			$layer[$name] = &$root->getInst($layer['dyn'][$name]);
+		} else {
+			$layer[$name] = &$root;
+		}
+	}
 }
