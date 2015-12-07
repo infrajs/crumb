@@ -65,11 +65,11 @@ class Crumb
 	}
 	public static function right($short)
 	{
-		return infra_seq_right($short, '/');
+		return Sequence::right($short, '/');
 	}
 	public static function short($right)
 	{
-		return infra_seq_short($right, '/');
+		return Sequence::short($right, '/');
 	}
 	public function getGET()
 	{
@@ -129,7 +129,7 @@ class Crumb
 	public static function init()
 	{
 		//Crumb::$child=Crumb::getInstance();
-		$query = urldecode(infra_toutf($_SERVER['QUERY_STRING']));
+		$query = urldecode(Path::toutf($_SERVER['QUERY_STRING']));
 		self::change($query);
 	}
 	public function toString()
