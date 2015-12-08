@@ -7,7 +7,8 @@ use infrajs\sequence\Sequence;
 use infrajs\template\Template;
 use infrajs\external\External;
 
-Path::req('*external/infra.php');
+//Должны собраться внешние описания слоёв
+Path::req('*layer-external/infra.php');
 
 Event::waitg('oninit', function () {
 	$root = Crumb::getInstance();
