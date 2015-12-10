@@ -145,7 +145,7 @@ class Crumb
 		if (isset($layer['parent'])) {
 			$root = &$layer['parent'][$name];
 		} else {
-			$root = &ext\Crumb::getInstance();
+			$root = &Crumb::getInstance();
 		}
 		if ($layer['dyn'][$name]) {
 			$layer[$name] = &$root->getInst($layer['dyn'][$name]);
