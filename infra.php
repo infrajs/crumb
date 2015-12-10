@@ -8,7 +8,7 @@ use infrajs\sequence\Sequence;
 use infrajs\template\Template;
 use infrajs\controller\External;
 
-//Должны собраться внешние описания слоёв
+
 Path::reqif('*controller/infra.php');
 
 Event::handler('oninit', function () {
@@ -41,8 +41,8 @@ Event::handler('oninit', function () {
 		Crumb::set($layer, 'crumb', $ext);
 		return $layer[$i];
 	});
-	Controller::runAddKeys('childs');
-	Controller::runAddList('child');
+	Run::runAddKeys('childs');
+	Run::runAddList('child');
 });
 
 
